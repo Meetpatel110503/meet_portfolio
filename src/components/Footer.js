@@ -16,21 +16,21 @@ export default function Footer({ darkMode }) {
           <a
             href='https://www.instagram.com/meetpatel1153?igsh=MTNpeG1ocTdwOTMxcg=='
             target='_blank'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white mx-2'
+            className={`text-gray-500 hover:text-green-600  mx-2`}
           >
             <FaInstagram size={24} />
           </a>
           <a
             href='https://github.com/Meetpatel110503'
             target='_blank'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white mx-2'
+            className='text-gray-500 hover:text-green-600   mx-2'
           >
             <FaGithub size={24} />
           </a>
           <a
             href='https://www.linkedin.com/in/meet-patel-644ba923a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
             target='_blank'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white mx-2'
+            className='text-gray-500 hover:text-green-600  mx-2'
           >
             <FaLinkedin size={24} />
           </a>

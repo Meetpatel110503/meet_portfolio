@@ -47,14 +47,14 @@ export default function Projects({ darkMode }) {
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
                 }`}
-                style={{ transitionDelay: `${index * 0.2}s` }}
+                style={{ transitionDelay: `${index * 0.3}s` }}
               >
                 <div
                   className={`px-8 py-10 relative  w-full border-none rounded ${
                     darkMode ? " bg-gray-900" : " bg-gray-100"
                   } h-auto`}
                 >
-                  <h2 className='tracking-widest text-sm title-font font-medium text-green-400 mb-1'>
+                  <h2 className='tracking-widest text-sm title-font font-medium text-green-500 mb-1'>
                     {project.subtitle}
                   </h2>
                   <h1

@@ -121,7 +121,7 @@ export default function Contact({ darkMode }) {
                 href='mailto:meetpatel110503@gmail.com'
                 className={`leading-relaxed ${
                   darkMode ? "text-gray-400" : "text-gray-700"
-                }`}
+                } hover:text-green-500   `}
               >
                 meetpatel110503@gmail.com
               </a>
