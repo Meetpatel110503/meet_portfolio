@@ -1,5 +1,5 @@
-import { FaCode } from "react-icons/fa"
 import React from "react"
+import { FaCode, FaExternalLinkAlt } from "react-icons/fa"
 import { projects } from "../data"
 import { useInView } from "react-intersection-observer"
 
@@ -8,6 +8,7 @@ export default function Projects({ darkMode }) {
     triggerOnce: true,
     threshold: 0.1,
   })
+
   return (
     <section
       id='projects'
@@ -17,11 +18,6 @@ export default function Projects({ darkMode }) {
     >
       <div className='container px-5 py-10 mx-auto text-center lg:px-40'>
         <div className='flex flex-col w-full mb-20'>
-          <FaCode
-            className={`mx-auto inline-block w-10 mb-4 ${
-              darkMode ? "text-white" : "text-black"
-            }`}
-          />
           <h1
             className={`sm:text-4xl text-3xl font-medium title-font mb-4 ${
               darkMode ? "text-white" : "text-black"
@@ -41,11 +37,9 @@ export default function Projects({ darkMode }) {
         </div>
         <div className='flex flex-wrap -m-4'>
           {projects.map((project, index) => (
-            <a
-              href={project.link}
-              target='_blank'
+            <div
+              className='sm:w-1/2 w-full p-4 transform transition duration-300 hover:scale-105 '
               key={project.link}
-              className='sm:w-1/2 w-full p-4 transform transition duration-300 hover:scale-105 hover:z-10'
             >
               <div
                 className={`flex relative transform transition-all duration-700 ${
@@ -57,11 +51,9 @@ export default function Projects({ darkMode }) {
                 ref={ref}
               >
                 <div
-                  className={`px-8 py-10 relative  w-full border-4 ${
-                    darkMode
-                      ? "border-gray-800 bg-gray-900"
-                      : "border-gray-200 bg-gray-100"
-                  }`}
+                  className={`px-8 py-10 relative  w-full border-none rounded ${
+                    darkMode ? " bg-gray-900" : " bg-gray-100"
+                  } h-auto`}
                 >
                   <h2 className='tracking-widest text-sm title-font font-medium text-green-400 mb-1'>
                     {project.subtitle}
@@ -76,9 +68,32 @@ export default function Projects({ darkMode }) {
                   <p className={darkMode ? "text-gray-400" : "text-gray-700"}>
                     {project.description}
                   </p>
+                  <div className='mt-4 flex justify-between'>
+                    <a
+                      href={project.source_link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className={`border border-none p-2 m-2 rounded  hover:text-green-500  text-sm ${
+                        darkMode ? "text-gray-400" : "text-gray-700"
+                      }`}
+                    >
+                      <FaCode className='inline-block mr-2' />
+                      Source Code
+                    </a>
+                    <a
+                      href={project.demo_link}
+                      target='_blank'
+                      className={`border border-none p-2 m-2 rounded  hover:text-green-500 text-sm ${
+                        darkMode ? "text-gray-400" : "text-gray-700"
+                      }`}
+                    >
+                      <FaExternalLinkAlt className='inline-block mr-2' />
+                      Live Demo
+                    </a>
+                  </div>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react"
-import About from "./components/About"
-import Contact from "./components/Contact"
+import About from "./views/About"
+import Contact from "./views/Contact"
 import Navbar from "./components/Navbar"
-import Projects from "./components/Projects"
-import Skills from "./components/Skills"
+import Projects from "./views/Projects"
+import Skills from "./views/Skills"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Loader from "./components/Loader"
-import Experience from "./components/Experience"
+import Experience from "./views/Experience"
 import Footer from "./components/Footer"
 import ScrollToTop from "./components/ScrollToTop"
 import Cursor from "./components/Cursor"
 import "./App.css"
+import ArticlesSection from "./views/ArticlesSection"
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -63,6 +64,7 @@ export default function App() {
       <Projects darkMode={darkMode} />
       <Skills darkMode={darkMode} />
       <Experience darkMode={darkMode} />
+      <ArticlesSection darkMode={darkMode} />
       <Contact darkMode={darkMode} />
       <Footer darkMode={darkMode} />
       <ScrollToTop />

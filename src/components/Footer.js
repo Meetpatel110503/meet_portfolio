@@ -10,7 +10,7 @@ export default function Footer({ darkMode }) {
     >
       <div className='container p-5  mx-auto flex items-center sm:flex-row flex-col'>
         <p className='text-sm text-center sm:text-left'>
-          © 2024 Meet Patel — Built with React and Tailwind CSS
+          © 2024 Meet Patel — All Rights Reserved.
         </p>
         <div className='flex mt-4 sm:mt-0 sm:ml-auto justify-center sm:justify-start'>
           <a

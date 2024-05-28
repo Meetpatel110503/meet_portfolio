@@ -4,21 +4,26 @@ export const projects = [
     subtitle: "React",
     description:
       "In product management system I have implement simple UI using react js.In this project user has register,login and also reset there password and manage all this functionality using localstorage.",
-    link: "https://github.com/Meetpatel110503/react-ass2.git",
+    source_link: "https://github.com/Meetpatel110503/react-ass2.git",
+    demo_link:
+      "https://productmanagement-meet-patels-projects-4f1f1b74.vercel.app",
   },
   {
-    title: "E-shope",
+    title: "E-shop",
     subtitle: "React",
     description:
       "In the E-shope project implement UI using react adn tailwind css which look like an e-commerce website.In this project I used same functionality of authentication from product management project.",
-    link: "https://github.com/Meetpatel110503/react-assignment3.git",
+    source_link: "https://github.com/Meetpatel110503/react-assignment3.git",
+    demo_link: "https://e-shop-dusky-theta.vercel.app",
   },
   {
     title: "Weather web",
     subtitle: "React and Next js",
     description:
       "In the Weather web project implement UI using react and next js.In this project user can enter their city name or zipcode and get their city weather condition.It also display upcoming 5 days weather condition.",
-    link: "https://github.com/Meetpatel110503/next_assignment.git",
+    source_link: "https://github.com/Meetpatel110503/next_assignment.git",
+    demo_link:
+      "https://weatherwebsite-meet-patels-projects-4f1f1b74.vercel.app/",
   },
   {
     title: "Hotel Management",
@@ -26,7 +31,8 @@ export const projects = [
     description:
       "In hotel management system I have create a system that help people to manage their stay.In this project I have implemented UI using react js,backend using Node js ,and database using MongoDB.",
     image: "/assets/hotel.png",
-    link: "https://github.com/Meetpatel110503/meet_Hotel.git",
+    source_link: "https://github.com/Meetpatel110503/meet_Hotel.git",
+    demo_link: "#",
   },
 ]
 
@@ -46,20 +52,23 @@ export const skills = [
 export const experiences = [
   {
     type: "education",
+    percentage: "89%",
     year: "2017-2018",
-    title: "10th Grade",
+    title: "10th",
     description: "SHD, Dungri",
   },
   {
     type: "education",
     year: "2019-2020",
-    title: "12th Grade",
+    percentage: "77%",
+    title: "12th",
     description: "Lok Vidhyalaya Untdi,Valsad",
   },
   {
     type: "education",
     year: "2020-2024",
-    title: "Bachelor of Engineering",
+    percentage: "8.5 CGPA",
+    title: "Bachelor of Engineering(IT)",
     description: "GEC,Modasa",
   },
   {
@@ -79,5 +88,41 @@ export const experiences = [
     year: "Feb 2024 - present",
     title: "Internship at Zignuts Technolab",
     description: "Worked on frontend(React) development.",
+  },
+]
+
+export const articles = [
+  {
+    id: 1,
+    imageUrl: "/assets/react19.avif",
+    title:
+      "React 19 is here with groundbreaking latest features. Have a look! ",
+    description:
+      "React 19 has arrived, bringing a wave of innovation and efficiency to the world of web development.",
+    link: "https://react.dev/blog/2024/04/25/react-19",
+  },
+  {
+    id: 2,
+    imageUrl: "/assets/js.jpeg",
+    title: " 54 JavaScript tools & plugins of modern web development",
+    description:
+      "JavaScript, being the backbone of modern web development, continually evolves to meet the demands of creating dynamic and interactive web applications. ",
+    link: "https://www.zignuts.com/blog/useful-javascript-tools-plugins",
+  },
+  {
+    id: 3,
+    imageUrl: "/assets/ai_future_of_work.png",
+    title: "How AI Is Changing The Future Of Work?",
+    description:
+      "Artificial Intelligence (AI) is revolutionizing the way we live and work.",
+    link: "#",
+  },
+  {
+    id: 4,
+    imageUrl: "/assets/gpt-40.jpeg",
+    title:
+      "OpenAI’s Advanced Version GPT 4o - Exploring Latest Features of ChatGPT",
+    description: `OpenAI's GPT-4o is no ordinary language model - it's an "omni" AI that marks a seismic shift in human-machine interaction.`,
+    link: "https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free/",
   },
 ]

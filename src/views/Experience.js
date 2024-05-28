@@ -1,4 +1,3 @@
-import { PiStudentBold } from "react-icons/pi"
 import React from "react"
 import { experiences } from "../data"
 import { FaGraduationCap, FaBriefcase } from "react-icons/fa"
@@ -19,11 +18,6 @@ export default function Experience({ darkMode }) {
     >
       <div className='container px-5 py-10 mx-auto'>
         <div className='text-center mb-20'>
-          <PiStudentBold
-            className={`inline-block mb-4 ${
-              darkMode ? "text-white" : "text-black"
-            }`}
-          />
           <h1
             className={`sm:text-4xl text-3xl font-medium title-font mb-4 ${
               darkMode ? "text-white" : "text-black"
@@ -54,7 +48,7 @@ export default function Experience({ darkMode }) {
             >
               <div
                 className={`h-full flex items-start ${
-                  darkMode ? "bg-gray-800" : "bg-gray-100"
+                  darkMode ? "bg-gray-900" : "bg-gray-100"
                 } p-8 rounded-lg`}
               >
                 <div
@@ -71,6 +65,7 @@ export default function Experience({ darkMode }) {
                       <FaBriefcase className='inline-block mr-2' />
                     )}
                     {exp.title}
+                    <p className='text-sm'>{exp.percentage}</p>
                   </h2>
                   <h3
                     className={`text-sm ${

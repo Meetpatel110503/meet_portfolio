@@ -56,6 +56,16 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             >
               Experience
             </a>
+            <a
+              href='#articles'
+              className={`mr-5 ${
+                darkMode
+                  ? "text-gray-300 hover:text-white"
+                  : "text-gray-700 hover:text-black"
+              }`}
+            >
+              Articles
+            </a>
           </nav>
 
           <button
@@ -79,6 +89,8 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
           </nav>
         </div>
       </header>
+      
+      
     </>
   )
 }

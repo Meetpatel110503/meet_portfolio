@@ -1,6 +1,5 @@
 import React, { useRef } from "react"
 import { useForm } from "react-hook-form"
-import { FaRegUser } from "react-icons/fa"
 import { toast } from "react-toastify"
 import { useInView } from "react-intersection-observer"
 
@@ -53,11 +52,6 @@ export default function Contact({ darkMode }) {
     >
       <div className='container px-5 py-10  mx-auto text-center lg:px-40'>
         <div className='flex flex-col w-full'>
-          <FaRegUser
-            className={`mx-auto inline-block w-10 mb-4 ${
-              darkMode ? "text-white" : "text-black"
-            }`}
-          />
           <h1
             className={`sm:text-4xl text-3xl font-medium title-font mb-4 ${
               darkMode ? "text-white" : "text-black"
@@ -186,7 +180,7 @@ export default function Contact({ darkMode }) {
               name='name'
               className={`w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out ${
                 darkMode
-                  ? "bg-gray-800 border-gray-700 focus:border-indigo-500 focus:ring-indigo-900 text-gray-100"
+                  ? "bg-gray-900 border-gray-700 focus:border-indigo-500 focus:ring-indigo-900 text-gray-100"
                   : "bg-gray-100 border-gray-300 focus:border-indigo-500 focus:ring-indigo-200 text-black"
               }`}
             />
@@ -210,7 +204,7 @@ export default function Contact({ darkMode }) {
               name='email'
               className={`w-full rounded border focus:ring-2 text-base outline-none py-1 px-3 leading-8 transition-colors duration-1000 ease-in-out ${
                 darkMode
-                  ? "bg-gray-800 border-gray-700 focus:border-indigo-500 focus:ring-indigo-900 text-gray-100"
+                  ? "bg-gray-900 border-gray-700 focus:border-indigo-500 focus:ring-indigo-900 text-gray-100"
                   : "bg-gray-100 border-gray-300 focus:border-indigo-500 focus:ring-indigo-200 text-black"
               }`}
             />
@@ -233,7 +227,7 @@ export default function Contact({ darkMode }) {
               name='message'
               className={`w-full h-32 rounded border focus:ring-2 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out ${
                 darkMode
-                  ? "bg-gray-800 border-gray-700 focus:border-indigo-500 focus:ring-indigo-900 text-gray-100"
+                  ? "bg-gray-900 border-gray-700 focus:border-indigo-500 focus:ring-indigo-900 text-gray-100"
                   : "bg-gray-100 border-gray-300 focus:border-indigo-500 focus:ring-indigo-200 text-black"
               }`}
             />

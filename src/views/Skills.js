@@ -1,6 +1,5 @@
-import { LuBadgeCheck } from "react-icons/lu"
-import { GiSkills } from "react-icons/gi"
 import React from "react"
+import { LuBadgeCheck } from "react-icons/lu"
 import { skills } from "../data"
 import { useInView } from "react-intersection-observer"
 
@@ -9,6 +8,7 @@ export default function Skills({ darkMode }) {
     triggerOnce: true,
     threshold: 0.1,
   })
+
   return (
     <section
       id='skills'
@@ -18,11 +18,6 @@ export default function Skills({ darkMode }) {
     >
       <div className='container px-5 py-10 mx-auto'>
         <div className='text-center mb-20'>
-          <GiSkills
-            className={`inline-block mb-4 ${
-              darkMode ? "text-white" : "text-black"
-            }`}
-          />
           <h1
             className={`sm:text-4xl text-3xl font-medium title-font mb-4 ${
               darkMode ? "text-white" : "text-black"
@@ -53,12 +48,12 @@ export default function Skills({ darkMode }) {
             >
               <div
                 className={`${
-                  darkMode ? "bg-gray-800" : "bg-gray-100"
+                  darkMode ? "bg-gray-900" : "bg-gray-100"
                 } rounded flex p-4 h-full items-center`}
               >
                 <LuBadgeCheck
                   className={`w-6 h-6 flex-shrink-0 mr-4 ${
-                    darkMode ? "text-green-400" : "text-green-500"
+                    darkMode ? "text-green-500" : "text-green-500"
                   }`}
                 />
                 <div className='flex-grow'>
@@ -69,12 +64,15 @@ export default function Skills({ darkMode }) {
                   >
                     {skill.name}
                   </span>
-                  <div className='w-full bg-gray-300 rounded-full h-1.5 mt-2'>
+                  <div className='w-full bg-gray-300 rounded-full h-1.5 mt-2 relative overflow-hidden'>
                     <div
                       className={`${
-                        darkMode ? "bg-green-400" : "bg-green-500"
-                      } h-1.5 rounded-full`}
-                      style={{ width: `${skill.percentage}%` }}
+                        darkMode ? "bg-green-500" : "bg-green-500"
+                      } h-1.5 rounded-full absolute top-0 left-0`}
+                      style={{
+                        width: inView ? `${skill.percentage}%` : "0",
+                        transition: "width 3s ease",
+                      }}
                     ></div>
                   </div>
                 </div>
