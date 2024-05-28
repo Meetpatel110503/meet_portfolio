@@ -34,17 +34,19 @@ export default function Skills({ darkMode }) {
             leadership, product design, and more.
           </p>
         </div>
-        <div className='flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2'>
+        <div
+          className='flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 '
+          ref={ref}
+        >
           {skills.map((skill, index) => (
             <div
-              ref={ref}
               key={skill.name}
               className={`p-2 md:w-1/2 w-full transform transition-all duration-700 ${
                 inView
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-              style={{ transitionDelay: `${index * 0.1}s` }}
+              style={{ transitionDelay: `${index * 0.2}s` }}
             >
               <div
                 className={`${

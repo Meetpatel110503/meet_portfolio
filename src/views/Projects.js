@@ -35,20 +35,19 @@ export default function Projects({ darkMode }) {
             available for others to explore and contribute to.
           </p>
         </div>
-        <div className='flex flex-wrap -m-4'>
+        <div className={`flex flex-wrap -m-4`} ref={ref}>
           {projects.map((project, index) => (
             <div
               className='sm:w-1/2 w-full p-4 transform transition duration-300 hover:scale-105 '
               key={project.link}
             >
               <div
-                className={`flex relative transform transition-all duration-700 ${
+                className={`flex relative transform transition-all duration-600 ${
                   inView
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
                 }`}
-                style={{ transitionDelay: `${index * 0.1}s` }}
-                ref={ref}
+                style={{ transitionDelay: `${index * 0.2}s` }}
               >
                 <div
                   className={`px-8 py-10 relative  w-full border-none rounded ${

@@ -34,16 +34,18 @@ export default function Experience({ darkMode }) {
             inspiring the next generation of innovators.
           </p>
         </div>
-        <div className='flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2'>
+        <div
+          className='flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2'
+          ref={ref}
+        >
           {experiences.map((exp, index) => (
             <div
-              ref={ref}
               className={`p-2 md:w-1/2 w-full transform transition-all duration-700 ${
                 inView
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-              style={{ transitionDelay: `${index * 0.1}s` }}
+              style={{ transitionDelay: `${index * 0.2}s` }}
               key={index}
             >
               <div

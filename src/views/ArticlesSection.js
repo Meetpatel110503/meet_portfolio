@@ -39,17 +39,16 @@ export default function Articles({ darkMode }) {
             inspiring the next generation of innovators:
           </p>
         </div>
-        <div className='flex flex-wrap -m-4 '>
-          {articles.slice(0, visibleArticles).map((article) => (
+        <div className='flex flex-wrap -m-4 ' ref={ref}>
+          {articles.slice(0, visibleArticles).map((article, index) => (
             <div
-              ref={ref}
               key={article.id}
               className={`sm:w-1/3 w-full p-4 transform transition duration-300 hover:scale-105 ${
                 inView
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-              style={{ transitionDelay: `${visibleArticles * 0.1}s` }}
+              style={{ transitionDelay: `${index * 0.3}s` }}
             >
               <div
                 className={`flex flex-col relative  ${
