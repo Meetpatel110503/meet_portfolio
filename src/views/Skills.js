@@ -2,8 +2,10 @@ import React from "react"
 import { LuBadgeCheck } from "react-icons/lu"
 import { skills } from "../data"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export default function Skills({ darkMode }) {
+  const { t } = useTranslation()
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -23,15 +25,14 @@ export default function Skills({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Skills &amp; Technologies
+            {t("skillsTitle")}
           </h1>
           <p
             className={`text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto ${
               darkMode ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            Chronological collection of my long-form thoughts on programming,
-            leadership, product design, and more.
+            {t("skillsDescription")}
           </p>
         </div>
         <div

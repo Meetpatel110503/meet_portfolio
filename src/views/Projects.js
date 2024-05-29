@@ -2,8 +2,11 @@ import React from "react"
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa"
 import { projects } from "../data"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export default function Projects({ darkMode }) {
+  const { t } = useTranslation()
+
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -23,16 +26,14 @@ export default function Projects({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Projects I've Built
+            {t("projectsTitle")}
           </h1>
           <p
             className={`lg:w-2/3 mx-auto leading-relaxed text-base ${
               darkMode ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            I've worked on a variety of projects over the years and I'm proud of
-            the progress I've made. Many of these projects are open-source and
-            available for others to explore and contribute to.
+            {t("projectsDescription")}
           </p>
         </div>
         <div className={`flex flex-wrap -m-4`} ref={ref}>
@@ -65,7 +66,7 @@ export default function Projects({ darkMode }) {
                     {project.title}
                   </h1>
                   <p className={darkMode ? "text-gray-400" : "text-gray-700"}>
-                    {project.description}
+                    {t(project.description)}
                   </p>
                   <div className='mt-4 flex justify-between'>
                     <a
@@ -77,17 +78,18 @@ export default function Projects({ darkMode }) {
                       }`}
                     >
                       <FaCode className='inline-block mr-2' />
-                      Source Code
+                      {t("source_code")}
                     </a>
                     <a
                       href={project.demo_link}
                       target='_blank'
+                      rel='noreferrer'
                       className={`border border-none p-2 m-2 rounded  hover:text-green-500 text-sm ${
                         darkMode ? "text-gray-400" : "text-gray-700"
                       }`}
                     >
                       <FaExternalLinkAlt className='inline-block mr-2' />
-                      Live Demo
+                      {t("live_demo")}
                     </a>
                   </div>
                 </div>

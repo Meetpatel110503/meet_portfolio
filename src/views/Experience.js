@@ -2,8 +2,11 @@ import React from "react"
 import { experiences } from "../data"
 import { FaGraduationCap, FaBriefcase } from "react-icons/fa"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export default function Experience({ darkMode }) {
+  const { t } = useTranslation()
+
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -23,15 +26,14 @@ export default function Experience({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Experience & Education
+            {t("experienceTitle")}
           </h1>
           <p
             className={`text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto ${
               darkMode ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            I'm passionate about pushing the boundaries of what's possible and
-            inspiring the next generation of innovators.
+            {t("experienceDescription")}
           </p>
         </div>
         <div

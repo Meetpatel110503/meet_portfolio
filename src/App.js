@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useEffect, useState } from "react"
 import About from "./views/About"
 import Contact from "./views/Contact"
@@ -14,12 +15,14 @@ import Cursor from "./components/Cursor"
 import "./App.css"
 import ArticlesSection from "./views/ArticlesSection"
 import { initGA, logPageView } from "./Analytics"
+import "./i18n"
 
 export default function App() {
   useEffect(() => {
     initGA()
     logPageView()
   }, [])
+
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("darkMode")
     const prefersDarkMode = window.matchMedia(

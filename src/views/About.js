@@ -1,7 +1,10 @@
 import React from "react"
+import { useTranslation } from "react-i18next"
 import { ReactTyped } from "react-typed"
 
 export default function About({ darkMode }) {
+  const { t } = useTranslation()
+
   return (
     <section id='about' className={`${darkMode ? "bg-black" : "bg-white"}`}>
       <div className='container mx-auto flex px-10 py-20 md:flex-row flex-col items-center'>
@@ -11,9 +14,9 @@ export default function About({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Hi, I'm &nbsp;
+            {t("greeting")}&nbsp;
             <ReactTyped
-              strings={["Meet Patel", "Developer"]}
+              strings={[t("name"), t("designation")]}
               typeSpeed={100}
               backSpeed={120}
               loop
@@ -25,25 +28,23 @@ export default function About({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            I love to build amazing websites.
+            {t("subdescription")}
           </h1>
           <p
             className={`mb-8 leading-relaxed  ${
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            I'm passionate frontend developer with a focus on building scalable
-            and responsive web applications. I have extensive experience in
-            front-end technologies such as HTML, CSS, and JavaScript, along with
-            expertise in popular frameworks like React.js and Next js.
+            {t("description")}
           </p>
           <div className='flex justify-center'>
             <a
               href='mailto:meetpatel110503@gmail.com'
               target='_blank'
+              rel="noreferrer"
               className='inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg'
             >
-              Let's Connect
+              {t("connect")}
             </a>
             <a
               href='/assets/resume.pdf'
@@ -55,7 +56,7 @@ export default function About({ darkMode }) {
                   : "text-gray-700 bg-gray-100"
               } border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg`}
             >
-              Download CV
+              {t("cv")}
             </a>
           </div>
         </div>

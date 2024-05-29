@@ -30,7 +30,7 @@ export const projects = [
     subtitle: "MERN Stack",
     description:
       "In hotel management system I have create a system that help people to manage their stay.In this project I have implemented UI using react js,backend using Node js ,and database using MongoDB.",
-    image: "/assets/hotel.png",
+
     source_link: "https://github.com/Meetpatel110503/meet_Hotel.git",
     demo_link: "#",
   },

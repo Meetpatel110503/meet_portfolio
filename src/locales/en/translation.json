@@ -1,0 +1,66 @@
+{
+  "Past Work": "Past Work",
+  "Skills": "Skills",
+  "Experience": "Experience",
+  "Articles": "Articles",
+  "Hire Me": "Hire Me",
+  "Select Language": "Select Language",
+  "greeting": "Hii I'm",
+  "description": "I'm passionate frontend developer with a focus on building scalable and responsive web applications. I have extensive experience in front-end technologies such as HTML, CSS, and JavaScript, along with expertise in popular frameworks like React.js and Next js.",
+  "subdescription": "I love to build amazing websites.",
+  "name": "Meet Patel",
+  "designation": "Developer",
+  "connect": "Let's Connect",
+  "cv": "Download CV",
+  "projectsTitle": "Projects I've Built",
+  "projectsDescription": "I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to.",
+  "source_code": "Source Code",
+  "live_demo": "Live Demo",
+  "projects": [
+    {
+      "title": "Product Management",
+      "subtitle": "React",
+      "description": "In product management system I have implement simple UI using react js.In this project user has register,login and also reset there password and manage all this functionality using localstorage.",
+      "source_link": "https://github.com/Meetpatel110503/react-ass2.git",
+      "demo_link": "https://productmanagement-meet-patels-projects-4f1f1b74.vercel.app"
+    },
+    {
+      "title": "E-shop",
+      "subtitle": "React",
+      "description": "In the E-shope project implement UI using react adn tailwind css which look like an e-commerce website.In this project I used same functionality of authentication from product management project.",
+      "source_link": "https://github.com/Meetpatel110503/react-assignment3.git",
+      "demo_link": "https://e-shop-dusky-theta.vercel.app"
+    },
+    {
+      "title": "Weather web",
+      "subtitle": "React and Next js",
+      "description": "In the Weather web project implement UI using react and next js.In this project user can enter their city name or zipcode and get their city weather condition.It also display upcoming 5 days weather condition.",
+      "source_link": "https://github.com/Meetpatel110503/next_assignment.git",
+      "demo_link": "https://weatherwebsite-meet-patels-projects-4f1f1b74.vercel.app/"
+    },
+    {
+      "title": "Hotel Management",
+      "subtitle": "MERN Stack",
+      "description": "In hotel management system I have create a system that help people to manage their stay.In this project I have implemented UI using react js,backend using Node js ,and database using MongoDB.",
+      "source_link": "https://github.com/Meetpatel110503/meet_Hotel.git",
+      "demo_link": "#"
+    }
+  ],
+  "skillsTitle": "Skills & Technologies",
+  "skillsDescription": "Chronological collection of my long-form thoughts on programming, leadership, product design, and more.",
+  "experienceTitle": "Experience & Education",
+  "experienceDescription": "I'm passionate about pushing the boundaries of what's possible and inspiring the next generation of innovators.",
+  "articleTitle": "Articles I'm Interested In",
+  "articleDescription": " I'm passionate about pushing the boundaries of what's possible and inspiring the next generation of innovators",
+  "contactTitle": "Get in touch",
+  "contactDescription": " Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.",
+  "ADDRESS": "ADDRESS",
+  "Kakwadi, Patel faliya": "Kakwadi, Patel faliya Ta & Di Valsad 396385",
+  "PHONE": "PHONE",
+  "Hire_me_text": "Thank you for your interest in getting in touch with me. I welcome your feedback, questions, and suggestions.",
+  "Name is required": "Name is required",
+  "Email is required": "Email is required",
+  "Message": "Message is required",
+  "Submit": "Submit",
+  "All Rights Reserved":"All Rights Reserved"
+}

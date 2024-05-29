@@ -1,0 +1,67 @@
+{
+  "Past Work": "Vergangene Arbeit",
+  "Skills": "Skills",
+  "Experience": "Erfahrung",
+  "Articles": "Artikel",
+  "Hire Me": "Stellen Sie mich ein",
+  "greeting": "Hallo ich bin",
+  "Select Language": "Sprache auswählen",
+  "description": "Ich bin leidenschaftlicher Frontend-Entwickler mit Schwerpunkt auf der Entwicklung skalierbarer und reaktionsfähiger Webanwendungen. Ich verfüge über umfassende Erfahrung in Front-End-Technologien wie HTML, CSS und JavaScript sowie über Fachkenntnisse in gängigen Frameworks wie React.js und Next js.",
+  "subdescription": "Ich liebe es, tolle Websites zu erstellen.",
+  "name": "Meet Patel",
+  "designation": "Developer",
+  "connect": "Lassen Sie uns verbinden",
+  "cv": "Lebenslauf herunterladen",
+  "projectsTitle": "Projekte, die ich erstellt habe",
+  "projectsDescription": "Ich habe im Laufe der Jahre an einer Vielzahl von Projekten gearbeitet und bin stolz auf die Fortschritte, die ich gemacht habe. Viele dieser Projekte sind Open Source und stehen anderen zur Erkundung und Mitarbeit zur Verfügung.",
+  "source_code": "Quellcode",
+  "live_demo": "Live-Demo",
+  "project": [
+    {
+      "title": "Produkt Management",
+      "subtitle": "React",
+      "description": "Im Produkt management system habe ich eine einfache Benutzeroberfläche mit React Js implementiert. In diesem Projekt muss sich der Benutzer registrieren, anmelden und sein Passwort zurücksetzen und alle diese Funktionen mithilfe von Localstorage verwalten.",
+      "source_link": "https://github.com/Meetpatel110503/react-ass2.git",
+      "demo_link": "https://productmanagement-meet-patels-projects-4f1f1b74.vercel.app"
+    },
+    {
+      "title": "E-shop",
+      "subtitle": "React",
+      "description": "Implementieren Sie im E-Shope-Projekt eine Benutzeroberfläche mit React und Tailwind CSS, die wie eine E-Commerce-Website aussieht. In diesem Projekt habe ich die gleiche Funktionalität der Authentifizierung aus dem Produktmanagementprojekt verwendet.",
+      "source_link": "https://github.com/Meetpatel110503/react-assignment3.git",
+      "demo_link": "https://e-shop-dusky-theta.vercel.app"
+    },
+    {
+      "title": "Wetternetz",
+      "subtitle": "React and Next js",
+      "description": "Implementieren Sie im Webprojekt „Wetter“ die Benutzeroberfläche mit „react“ und „next js“. In diesem Projekt können Benutzer den Namen ihrer Stadt oder ihre Postleitzahl eingeben und die Wetterbedingungen ihrer Stadt abrufen. Außerdem werden die Wetterbedingungen für die nächsten 5 Tage angezeigt.",
+      "source_link": "https://github.com/Meetpatel110503/next_assignment.git",
+      "demo_link": "https://weatherwebsite-meet-patels-projects-4f1f1b74.vercel.app/"
+    },
+    {
+      "title": "Hotel Management",
+      "subtitle": "MERN Stack",
+      "description": "Im Hotelmanagementsystem habe ich ein System erstellt, das Menschen bei der Verwaltung ihres Aufenthalts hilft. In diesem Projekt habe ich die Benutzeroberfläche mit React Js, das Backend mit Node Js und die Datenbank mit MongoDB implementiert.",
+      "source_link": "https://github.com/Meetpatel110503/meet_Hotel.git",
+      "demo_link": "#"
+    }
+  ],
+  "skillsTitle": "Fähigkeiten und Technologien",
+  "skillsDescription": "Chronologische Sammlung meiner langen Gedanken zu Programmierung, Führung, Produktgestaltung und mehr.",
+  "experienceTitle": "Erfahrung und Ausbildung",
+  "experienceDescription": "Es liegt mir am Herzen, die Grenzen des Möglichen zu erweitern und die nächste Generation von Innovatoren zu inspirieren.",
+  "articleTitle": "Artikel, die mich interessieren",
+  "articleDescription": " Es liegt mir am Herzen, die Grenzen des Möglichen zu erweitern und die nächste Generation von Innovatoren zu inspirieren",
+  "contactTitle": "In Kontakt kommen",
+  "contactDescription": "Nehmen Sie gerne Kontakt mit mir auf. Ich bin immer offen für Gespräche über neue Projekte, kreative Ideen oder Möglichkeiten, Teil Ihrer Visionen zu sein.",
+  "ADDRESS": "ADRESSE",
+  "Kakwadi, Patel faliya": "Kakwadi, Patel faliya Ta & Di Valsad 396385396385",
+  "PHONE": "TELEFON",
+  "Hire_me_text": "Vielen Dank für Ihr Interesse, mit mir in Kontakt zu treten. Ich freue mich über Ihr Feedback, Ihre Fragen und Vorschläge.",
+  "Name is required": "Name ist erforderlich",
+  "Email is required": "E-Mail ist erforderlich",
+  "Message": "Nachricht",
+  "Message is required": "Nachricht ist erforderlich",
+  "Submit": "Absenden",
+  "All Rights Reserved":"Alle Rechte vorbehalten"
+}

@@ -1,9 +1,11 @@
-import React, { useRef } from "react"
+import React from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export default function Contact({ darkMode }) {
+  const { t } = useTranslation()
   const {
     register,
     handleSubmit,
@@ -56,12 +58,10 @@ export default function Contact({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Get in touch
+            {t("contactTitle")}
           </h1>
           <p className='lg:w-2/3 mx-auto leading-relaxed text-base'>
-            Feel free to get in touch with me. I am always open to discussing
-            new projects, creative ideas or opportunities to be part of your
-            visions.
+            {t("contactDescription")}
           </p>
         </div>
       </div>
@@ -96,16 +96,14 @@ export default function Contact({ darkMode }) {
                   darkMode ? "text-white" : "text-black"
                 }`}
               >
-                ADDRESS
+                {t("ADDRESS")}
               </h2>
               <p
                 className={`mt-1 ${
                   darkMode ? "text-gray-400" : "text-gray-700"
                 }`}
               >
-                Kakwadi, Patel faliya
-                <br />
-                Ta & Di Valsad 396385
+                {t("Kakwadi, Patel faliya Ta & Di Valsad 396385")}
               </p>
             </div>
             <div className='lg:w-1/2 px-8 mt-4 lg:mt-0'>
@@ -129,7 +127,7 @@ export default function Contact({ darkMode }) {
                   darkMode ? "text-white" : "text-black"
                 }`}
               >
-                PHONE
+                {t("PHONE")}
               </h2>
               <p
                 className={`leading-relaxed ${
@@ -153,15 +151,14 @@ export default function Contact({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Hire Me
+            {t("Hire Me")}
           </h2>
           <p
             className={`leading-relaxed mb-5 ${
               darkMode ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            Thank you for your interest in getting in touch with me. I welcome
-            your feedback, questions, and suggestions.
+            {t("Hire_me_text")}
           </p>
           <div className='relative mb-4'>
             <label
@@ -184,7 +181,7 @@ export default function Contact({ darkMode }) {
               }`}
             />
             {errors.name && (
-              <span className='text-red-500'>Name is required</span>
+              <span className='text-red-500'>{t("Name is required")}</span>
             )}
           </div>
           <div className='relative mb-4'>
@@ -208,7 +205,7 @@ export default function Contact({ darkMode }) {
               }`}
             />
             {errors.email && (
-              <span className='text-red-500'>Email is required</span>
+              <span className='text-red-500'>{t("Email is required")}</span>
             )}
           </div>
           <div className='relative mb-4'>
@@ -218,7 +215,7 @@ export default function Contact({ darkMode }) {
                 darkMode ? "text-gray-400" : "text-gray-700"
               }`}
             >
-              Message
+              {t("Message")}
             </label>
             <textarea
               {...register("message", { required: true })}
@@ -231,14 +228,14 @@ export default function Contact({ darkMode }) {
               }`}
             />
             {errors.message && (
-              <span className='text-red-500'>Message is required</span>
+              <span className='text-red-500'>{t("Message is required")}</span>
             )}
           </div>
           <button
             type='submit'
             className='text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'
           >
-            Submit
+            {t("Submit")}
           </button>
         </form>
       </div>
