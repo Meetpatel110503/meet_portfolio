@@ -21,18 +21,17 @@ export default function Contact({ darkMode }) {
     threshold: 0.1,
   })
 
+  const API = process.env.REACT_APP_API
+
   const onSubmit = async (data) => {
     try {
-      const response = await fetch(
-        "https://portfolio-777aa-default-rtdb.firebaseio.com/portfolio.json",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      )
+      const response = await fetch(API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
       const responseData = await response.text()
       console.log(responseData)
       toast.success("Message sent successfully.")

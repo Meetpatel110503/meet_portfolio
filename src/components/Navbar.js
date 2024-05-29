@@ -89,8 +89,6 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
           </nav>
         </div>
       </header>
-      
-      
     </>
   )
 }

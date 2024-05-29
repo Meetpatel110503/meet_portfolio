@@ -13,8 +13,13 @@ import ScrollToTop from "./components/ScrollToTop"
 import Cursor from "./components/Cursor"
 import "./App.css"
 import ArticlesSection from "./views/ArticlesSection"
+import { initGA, logPageView } from "./Analytics"
 
 export default function App() {
+  useEffect(() => {
+    initGA()
+    logPageView()
+  }, [])
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("darkMode")
     const prefersDarkMode = window.matchMedia(
