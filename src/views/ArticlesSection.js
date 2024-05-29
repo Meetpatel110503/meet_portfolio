@@ -1,8 +1,11 @@
 import React, { useState } from "react"
 import { articles } from "../data"
 import { useInView } from "react-intersection-observer"
+import { useTranslation } from "react-i18next"
 
 export default function Articles({ darkMode }) {
+  const { t } = useTranslation()
+
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -28,15 +31,14 @@ export default function Articles({ darkMode }) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Articles I'm Interested In
+            {t("articleTitle")}
           </h1>
           <p
             className={`lg:w-2/3 mx-auto leading-relaxed text-base ${
               darkMode ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            I'm passionate about pushing the boundaries of what's possible and
-            inspiring the next generation of innovators:
+            {t("articleDescription")}
           </p>
         </div>
         <div className='flex flex-wrap -m-4 ' ref={ref}>
@@ -78,6 +80,7 @@ export default function Articles({ darkMode }) {
                   <a
                     href={article.link}
                     target='_blank'
+                    rel="noreferrer"
                     className={`mt-3 text-green-500 hover:text-green-600 inline-flex items-center self-end`}
                   >
                     Read more...

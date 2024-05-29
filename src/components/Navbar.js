@@ -1,94 +1,138 @@
-import React from "react"
-import { FaArrowRight, FaSun, FaMoon } from "react-icons/fa"
+import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
+import { FaArrowRight, FaSun, FaMoon, FaBars } from "react-icons/fa"
+import LanguageSelector from "./LanguageSelector"
 
 export default function Navbar({ darkMode, toggleDarkMode }) {
+  const { t } = useTranslation()
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+
   return (
-    <>
-      <header
-        className={`md:sticky top-0 z-10 ${
-          darkMode ? "bg-gray-900" : "bg-gray-100"
-        }`}
-      >
-        <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
-          <a className='title-font font-medium mb-4 md:mb-0'>
-            <a
-              href='#about'
+    <header
+      className={`md:sticky top-0 z-10 ${
+        darkMode ? "bg-gray-900" : "bg-gray-100"
+      }`}
+    >
+      <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between'>
+        <div className='flex justify-between w-full md:w-auto'>
+          <a className='title-font font-medium  md:mb-0' href='#about'>
+            <span
               className={`ml-3 text-xl ${
                 darkMode ? "text-white" : "text-black"
               }`}
             >
               <span>MEET</span> <span className='text-green-400'>PATEL</span>
-            </a>
+            </span>
           </a>
+          <div className='lg:hidden  md:ml-72 md:pl-64 title-font font-medium  '>
+            <button
+              onClick={toggleDarkMode}
+              className={`  items-center text-base   ${
+                darkMode
+                  ? " text-gray-300 hover:text-white"
+                  : " text-gray-700 hover:text-black"
+              }`}
+            >
+              {darkMode ? (
+                <FaSun className='w-4 h-4' />
+              ) : (
+                <FaMoon className='w-4 h-4' />
+              )}
+            </button>
+            <button className='text-xl ml-4 ' onClick={toggleMenu}>
+              <FaBars
+                className={`${darkMode ? "text-white" : "text-black"} w-4 h-4`}
+              />
+            </button>
+          </div>
+        </div>
 
-          <nav
-            className={`md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l flex flex-wrap items-center text-base justify-center ${
-              darkMode ? "md:border-gray-700" : "md:border-gray-200"
+        <nav
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } lg:flex flex flex-col lg:flex-row  text-base  w-full md:w-auto  p-2`}
+        >
+          <a
+            href='#projects'
+            className={`mr-5 ${
+              darkMode
+                ? "text-gray-300 hover:text-white"
+                : "text-gray-700 hover:text-black"
             }`}
           >
-            <a
-              href='#projects'
-              className={`mr-5 ${
-                darkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-700 hover:text-black"
-              }`}
-            >
-              Past Work
-            </a>
-            <a
-              href='#skills'
-              className={`mr-5 ${
-                darkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-700 hover:text-black"
-              }`}
-            >
-              Skills
-            </a>
-            <a
-              href='#experience'
-              className={`mr-5 ${
-                darkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-700 hover:text-black"
-              }`}
-            >
-              Experience
-            </a>
-            <a
-              href='#articles'
-              className={`mr-5 ${
-                darkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-700 hover:text-black"
-              }`}
-            >
-              Articles
-            </a>
-          </nav>
-
-          <button
-            onClick={toggleDarkMode}
-            className={`inline-flex items-center mr-4  border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0`}
+            {t("Past Work")}
+          </a>
+          <a
+            href='#skills'
+            className={`mr-5 ${
+              darkMode
+                ? "text-gray-300 hover:text-white"
+                : "text-gray-700 hover:text-black"
+            }`}
           >
-            {darkMode ? (
-              <FaSun className='w-4 h-4' />
-            ) : (
-              <FaMoon className='w-4 h-4' />
-            )}
-          </button>
-          <nav>
+            {t("Skills")}
+          </a>
+          <a
+            href='#experience'
+            className={`mr-5 ${
+              darkMode
+                ? "text-gray-300 hover:text-white"
+                : "text-gray-700 hover:text-black"
+            }`}
+          >
+            {t("Experience")}
+          </a>
+          <a
+            href='#articles'
+            className={`mr-5 ${
+              darkMode
+                ? "text-gray-300 hover:text-white"
+                : "text-gray-700 hover:text-black"
+            }`}
+          >
+            {t("Articles")}
+          </a>
+        </nav>
+
+        <nav
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } lg:flex flex-col lg:flex-row items-center text-base justify-center w-full md:w-auto`}
+        >
+          <div className='hidden lg:flex items-center space-x-4'>
+            <button
+              onClick={toggleDarkMode}
+              className={`inline-flex items-center border-0 py-1 px-6 focus:outline-none rounded text-base ${
+                darkMode
+                  ? " text-gray-300 hover:text-white"
+                  : " text-gray-700 hover:text-black"
+              }`}
+            >
+              {darkMode ? (
+                <FaSun className='w-4 h-4' />
+              ) : (
+                <FaMoon className='w-4 h-4' />
+              )}
+            </button>
+          </div>
+          <div className='flex items-center  '>
+            <LanguageSelector darkMode={darkMode} />
             <a
               href='#contact'
-              className={`inline-flex items-center  border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0`}
+              className={` inline-flex items-center py-1 px-6 focus:outline-none rounded text-base  md:mt-0 ${
+                darkMode
+                  ? " text-gray-300 hover:text-white"
+                  : "text-gray-700 hover:text-black"
+              }`}
             >
-              Hire Me
+              {t("Hire Me")}
               <FaArrowRight className='w-4 h-4 ml-1' />
             </a>
-          </nav>
-        </div>
-      </header>
-    </>
+          </div>
+        </nav>
+      </div>
+    </header>
   )
 }
