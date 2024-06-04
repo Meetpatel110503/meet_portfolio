@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { LuBadgeCheck } from "react-icons/lu"
 import { skills } from "../data"
 import { useInView } from "react-intersection-observer"
 import { useTranslation } from "react-i18next"
+import { DarkModeContext } from "../context/DarkModeContext"
 
-export default function Skills({ darkMode }) {
+export default function Skills() {
+  const { darkMode } = useContext(DarkModeContext)
   const { t } = useTranslation()
   const { ref, inView } = useInView({
     triggerOnce: true,

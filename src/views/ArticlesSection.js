@@ -1,9 +1,11 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { articles } from "../data"
 import { useInView } from "react-intersection-observer"
 import { useTranslation } from "react-i18next"
+import { DarkModeContext } from "../context/DarkModeContext"
 
-export default function Articles({ darkMode }) {
+export default function Articles() {
+  const { darkMode } = useContext(DarkModeContext)
   const { t } = useTranslation()
 
   const { ref, inView } = useInView({
@@ -80,7 +82,7 @@ export default function Articles({ darkMode }) {
                   <a
                     href={article.link}
                     target='_blank'
-                    rel="noreferrer"
+                    rel='noreferrer'
                     className={`mt-3 text-green-500 hover:text-green-600 inline-flex items-center self-end`}
                   >
                     Read more...

@@ -1,5 +1,4 @@
-// src/App.js
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import About from "./views/About"
 import Contact from "./views/Contact"
 import Navbar from "./components/Navbar"
@@ -16,6 +15,8 @@ import "./App.css"
 import ArticlesSection from "./views/ArticlesSection"
 import { initGA, logPageView } from "./Analytics"
 import "./i18n"
+import { DarkModeContext, DarkModeProvider } from "./context/DarkModeContext"
+import WhatsAppButton from "./components/WhatsAppButton"
 
 export default function App() {
   useEffect(() => {
@@ -23,21 +24,7 @@ export default function App() {
     logPageView()
   }, [])
 
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("darkMode")
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches
-
-    if (savedTheme === "true") {
-      return true
-    } else if (savedTheme === "false") {
-      return false
-    } else {
-      return prefersDarkMode
-    }
-  })
-
+  const { darkMode } = useContext(DarkModeContext)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -48,34 +35,22 @@ export default function App() {
     return () => clearTimeout(timer)
   }, [])
 
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("bg-gray-900", "text-white")
-      document.body.classList.remove("bg-white", "text-black")
-    } else {
-      document.body.classList.add("bg-white", "text-black")
-      document.body.classList.remove("bg-gray-900", "text-white")
-    }
-    localStorage.setItem("darkMode", darkMode)
-  }, [darkMode])
-
-  const toggleDarkMode = () => setDarkMode(!darkMode)
-
   if (loading) {
     return <Loader darkMode={darkMode} />
   }
 
   return (
     <main>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <About darkMode={darkMode} />
-      <Projects darkMode={darkMode} />
-      <Skills darkMode={darkMode} />
-      <Experience darkMode={darkMode} />
-      <ArticlesSection darkMode={darkMode} />
-      <Contact darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
+      <Navbar />
+      <About />
+      <Projects />
+      <Skills />
+      <Experience />
+      <ArticlesSection />
+      <Contact />
+      <Footer />
       <ScrollToTop />
+      <WhatsAppButton />
 
       {/* <Cursor /> */}
       <ToastContainer

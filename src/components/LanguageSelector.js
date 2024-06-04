@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useTranslation } from "react-i18next"
+import { DarkModeContext } from "../context/DarkModeContext"
 
-const LanguageSelector = ({ darkMode }) => {
+const LanguageSelector = () => {
+  const { darkMode } = useContext(DarkModeContext)
   const { i18n, t } = useTranslation()
 
   const changeLanguage = (lng) => {

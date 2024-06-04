@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
 import { useInView } from "react-intersection-observer"
 import { useTranslation } from "react-i18next"
+import { DarkModeContext } from "../context/DarkModeContext"
 
-export default function Contact({ darkMode }) {
+export default function Contact() {
+  const { darkMode } = useContext(DarkModeContext)
   const { t } = useTranslation()
   const {
     register,
@@ -68,7 +70,7 @@ export default function Contact({ darkMode }) {
       <div className='container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap'>
         <div
           ref={detailsRef}
-          className={`lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative ${
+          className={`lg:w-2/3 md:w-1/2  rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative ${
             detailsInView ? "animate-fade-in" : "opacity-0"
           } ${
             darkMode ? "bg-gray-900" : "bg-gray-100"
@@ -90,7 +92,7 @@ export default function Contact({ darkMode }) {
               darkMode ? "bg-gray-900" : "bg-white"
             }`}
           >
-            <div className='lg:w-1/2 px-8 mt-4 lg:mt-0'>
+            <div className='lg:w-1/2  px-8 mt-4 lg:mt-0'>
               <h2
                 className={`title-font font-semibold tracking-widest text-xs ${
                   darkMode ? "text-white" : "text-black"
@@ -98,13 +100,16 @@ export default function Contact({ darkMode }) {
               >
                 {t("ADDRESS")}
               </h2>
-              <p
+              <a
+                href="https://www.google.com/maps/place/20%C2%B042'57.1%22N+72%C2%B052'33.2%22E/@20.7158473,72.8752513,19z/data=!3m1!4b1!4m4!3m3!8m2!3d20.715846!4d72.875895?hl=en&entry=ttu"
+                target='_blank'
+                rel='noreferrer'
                 className={`mt-1 ${
                   darkMode ? "text-gray-400" : "text-gray-700"
-                }`}
+                } hover:text-green-500`}
               >
                 {t("Kakwadi, Patel faliya Ta & Di Valsad 396385")}
-              </p>
+              </a>
             </div>
             <div className='lg:w-1/2 px-8 mt-4 lg:mt-0'>
               <h2

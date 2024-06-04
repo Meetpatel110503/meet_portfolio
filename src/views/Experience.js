@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { experiences } from "../data"
 import { FaGraduationCap, FaBriefcase } from "react-icons/fa"
 import { useInView } from "react-intersection-observer"
 import { useTranslation } from "react-i18next"
+import { DarkModeContext } from "../context/DarkModeContext"
 
-export default function Experience({ darkMode }) {
+export default function Experience() {
+  const { darkMode } = useContext(DarkModeContext)
   const { t } = useTranslation()
 
   const { ref, inView } = useInView({

@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useTranslation } from "react-i18next"
 import { ReactTyped } from "react-typed"
+import { DarkModeContext } from "../context/DarkModeContext"
 
-export default function About({ darkMode }) {
+export default function About() {
+  const { darkMode } = useContext(DarkModeContext)
   const { t } = useTranslation()
 
   return (
@@ -41,7 +43,7 @@ export default function About({ darkMode }) {
             <a
               href='mailto:meetpatel110503@gmail.com'
               target='_blank'
-              rel="noreferrer"
+              rel='noreferrer'
               className='inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg'
             >
               {t("connect")}
