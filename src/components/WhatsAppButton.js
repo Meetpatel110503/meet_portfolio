@@ -31,7 +31,7 @@ const WhatsAppButton = () => {
           onClick={openWhatsApp}
           style={{ cursor: "pointer" }}
         >
-          <FaWhatsapp size={16} color='#25D366' />
+          <FaWhatsapp size={18} color='#25D366' />
           <span
             style={{
               position: "absolute",
