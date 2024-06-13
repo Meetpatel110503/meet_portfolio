@@ -27,9 +27,20 @@ class MessageParser {
       this.actionProvider.handleAvailable()
     } else if (
       lowerCaseMessage.includes("about") ||
-      lowerCaseMessage.includes("yourself")
+      lowerCaseMessage.includes("yourself") ||
+      lowerCaseMessage.includes("info")
     ) {
       this.actionProvider.handleAbout()
+    } else if (lowerCaseMessage.includes("name")) {
+      this.actionProvider.handleName()
+    } else if (lowerCaseMessage.includes("welcome")) {
+      this.actionProvider.handleWelcome()
+    } else if (
+      lowerCaseMessage.includes("resume") ||
+      lowerCaseMessage.includes("cv") ||
+      lowerCaseMessage.includes("biodata")
+    ) {
+      this.actionProvider.handleResume()
     } else {
       this.actionProvider.handleUnknown()
     }

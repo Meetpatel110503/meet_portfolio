@@ -1,3 +1,5 @@
+import FileSaver from "file-saver"
+
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage
@@ -118,6 +120,42 @@ class ActionProvider {
       "I am a software developer passionate about creating innovative solutions."
     )
     this.addMessageToState(message)
+  }
+
+  handleName = () => {
+    const message = this.createChatBotMessage("My name is Meet Patel")
+    this.addMessageToState(message)
+  }
+
+  handleWelcome = () => {
+    const message = this.createChatBotMessage(
+      "Appreciate it! Feel free to reach out if you need anything."
+    )
+    this.addMessageToState(message)
+  }
+
+  handleResume = () => {
+    try {
+      const resumeUrl = "./assets/resume.pdf"
+      const message = this.createChatBotMessage(
+        <div>
+          <p>Click the button below to download:</p>
+          <button
+            onClick={() => FileSaver.saveAs(resumeUrl, "meet_patel.pdf")}
+            className='bg-blue-500 text-white border-none px-5 py-2.5 text-center text-base cursor-pointer rounded w-auto max-w-xs my-1'
+          >
+            meet_patel.pdf
+          </button>
+        </div>
+      )
+      this.addMessageToState(message)
+    } catch (error) {
+      console.error("Error downloading resume:", error)
+      const errorMessage = this.createChatBotMessage(
+        "Oops! There was an error while downloading the resume. Please try again later."
+      )
+      this.addMessageToState(errorMessage)
+    }
   }
 
   addMessageToState = (message) => {

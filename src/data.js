@@ -115,7 +115,7 @@ export const articles = [
     title: "How AI Is Changing The Future Of Work?",
     description:
       "Artificial Intelligence (AI) is revolutionizing the way we live and work.",
-    link: "#",
+    link: "https://www.forbes.com/sites/marenbannon/2023/06/22/how-ai-is-changing-the-future-of-work/?sh=28e1c74472e0",
   },
   {
     id: 4,

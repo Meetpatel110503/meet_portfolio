@@ -5,11 +5,7 @@ const botName = "Meet Patel"
 
 const config = {
   botName: botName,
-  initialMessages: [
-    createChatBotMessage(
-      `Hi there! I'm ${botName}. How can I assist you today?`
-    ),
-  ],
+  initialMessages: [createChatBotMessage(`👋 Hi there! I'm ${botName}.`)],
   customStyles: {
     botMessageBox: {
       backgroundColor: "#376B7E",
