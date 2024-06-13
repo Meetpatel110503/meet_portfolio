@@ -31,65 +31,24 @@ const ScrollToTop = () => {
     <>
       {isVisible && (
         <div
-          className='fixed  bottom-8 right-8 z-10 border  mb-14 p-2'
+          className='fixed  bottom-6 right-8 z-10 border rounded-full mb-14 p-2'
           onClick={scrollToTop}
-          style={{
-            cursor: "pointer",
-            backgroundColor: "#72CAC6",
-            padding: "5px",
-          }}
+          style={{ cursor: "pointer" }}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            id='Expand-2--Streamline-Ultimate'
-            height='24'
+            color='#25D366'
             width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            class='feather feather-chevron-up'
           >
-            <desc>Expand 2 Streamline Icon: https://streamlinehq.com</desc>
-            <path
-              stroke='#000000'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M23.25 0.748047 0.75 23.248'
-              stroke-width='1.5'
-            ></path>
-            <path
-              stroke='#000000'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M23.25 7.49805V0.748047H16.5'
-              stroke-width='1.5'
-            ></path>
-            <path
-              stroke='#000000'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M0.75 16.498v6.75H7.5'
-              stroke-width='1.5'
-            ></path>
-            <path
-              stroke='#000000'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M0.75 0.748047 23.25 23.248'
-              stroke-width='1.5'
-            ></path>
-            <path
-              stroke='#000000'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M0.75 7.49805V0.748047H7.5'
-              stroke-width='1.5'
-            ></path>
-            <path
-              stroke='#000000'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M23.25 16.498v6.75H16.5'
-              stroke-width='1.5'
-            ></path>
+            <polyline points='18 15 12 9 6 15'></polyline>
           </svg>
         </div>
       )}

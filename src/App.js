@@ -15,10 +15,18 @@ import "./App.css"
 import ArticlesSection from "./views/ArticlesSection"
 import { initGA, logPageView } from "./Analytics"
 import "./i18n"
-import { DarkModeContext, DarkModeProvider } from "./context/DarkModeContext"
+import { DarkModeContext } from "./context/DarkModeContext"
 import WhatsAppButton from "./components/WhatsAppButton"
+import ChatbotComponent from "./components/Chatbot"
 
 export default function App() {
+  const [isChatbotVisible, setIsChatbotVisible] = useState(false)
+  const [isButtonVisible, setIsButtonVisible] = useState(false)
+
+  const handleWhatsAppClick = () => {
+    setIsChatbotVisible(!isChatbotVisible)
+  }
+
   useEffect(() => {
     initGA()
     logPageView()
@@ -32,7 +40,21 @@ export default function App() {
       setLoading(false)
     }, 1200)
 
-    return () => clearTimeout(timer)
+    const onScroll = () => {
+      if (window.pageYOffset > 3300) {
+        setIsButtonVisible(true)
+      } else {
+        setIsButtonVisible(false)
+        setIsChatbotVisible(false)
+      }
+    }
+
+    window.addEventListener("scroll", onScroll)
+
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener("scroll", onScroll)
+    }
   }, [])
 
   if (loading) {
@@ -40,7 +62,11 @@ export default function App() {
   }
 
   return (
-    <main>
+    <main
+      className={`${
+        darkMode ? "dark" : ""
+      } bg-gray-100 dark:bg-gray-900 min-h-screen`}
+    >
       <Navbar />
       <About />
       <Projects />
@@ -50,7 +76,15 @@ export default function App() {
       <Contact />
       <Footer />
       <ScrollToTop />
-      <WhatsAppButton />
+
+      <ChatbotComponent
+        isVisible={isChatbotVisible}
+        toggleChatbot={handleWhatsAppClick}
+      />
+      <WhatsAppButton
+        onClick={handleWhatsAppClick}
+        isVisible={isButtonVisible}
+      />
 
       {/* <Cursor /> */}
       <ToastContainer

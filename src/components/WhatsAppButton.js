@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react"
-import { FaWhatsapp } from "react-icons/fa"
+import { MdOutlineMarkUnreadChatAlt } from "react-icons/md"
 
-const WhatsAppButton = () => {
-  const [isVisible, setIsVisible] = useState(false)
+const WhatsAppButton = ({ onClick, isVisible }) => {
+  const [isButtonVisible, setIsButtonVisible] = useState(false)
+
   useEffect(() => {
     const onScroll = () => {
-      if (window.location.pathname !== "#about") {
-        if (window.pageYOffset > 3300) {
-          setIsVisible(true)
-        } else {
-          setIsVisible(false)
-        }
+      if (window.pageYOffset > 3300) {
+        setIsButtonVisible(true)
+      } else {
+        setIsButtonVisible(false)
       }
     }
 
@@ -18,31 +17,15 @@ const WhatsAppButton = () => {
 
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
-  const openWhatsApp = () => {
-    window.open("https://wa.me/9173378175", "_blank")
-  }
 
   return (
     <>
-      {" "}
-      {isVisible && (
+      {isButtonVisible && (
         <div
-          className='fixed bottom-20 right-8 z-10 border rounded-full mb-14 p-2'
-          onClick={openWhatsApp}
-          style={{ cursor: "pointer" }}
+          className='fixed bottom-20 right-8 z-50 border rounded-full mb-14 p-2 cursor-pointer  shadow-lg'
+          onClick={onClick}
         >
-          <FaWhatsapp size={18} color='#25D366' />
-          <span
-            style={{
-              position: "absolute",
-              top: 5,
-              right: 8,
-              width: 7,
-              height: 7,
-              backgroundColor: "green",
-              borderRadius: "50%",
-            }}
-          />
+          <MdOutlineMarkUnreadChatAlt size={24} color='#25D366' />
         </div>
       )}
     </>
