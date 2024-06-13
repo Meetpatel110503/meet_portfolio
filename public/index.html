@@ -29,20 +29,16 @@
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js"
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js"
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+     
       const firebaseConfig = {
-        apiKey: "AIzaSyDS9gNH3T5ehJgCvfb9V7de9cIHEN93ejk",
-        authDomain: "portfolio-777aa.firebaseapp.com",
+        apiKey: process.env.REACT_APP_API_KEY,
+        authDomain: process.env.REACT_AAP_AUTH_DOMAIN,
         databaseURL: "https://portfolio-777aa-default-rtdb.firebaseio.com",
-        projectId: "portfolio-777aa",
+        projectId: process.env.REACT_AAP_PROJECT_ID,
         storageBucket: "portfolio-777aa.appspot.com",
-        messagingSenderId: "866844062918",
-        appId: "1:866844062918:web:79898f7c23cbd9e06593c7",
-        measurementId: "G-ZFX9V2PXQB",
+        messagingSenderId: process.env.REACT_AAP_MESSAGING_SENDER_ID,
+        appId: process.env.REACT_AAP_APP_ID,
+        measurementId: process.env.REACT_AAP_MEASUREMENT_ID,
       }
 
       // Initialize Firebase
