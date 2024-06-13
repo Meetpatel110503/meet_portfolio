@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
+import { DarkModeContext } from "../context/DarkModeContext"
 
-export default function Loader({ darkMode }) {
+export default function Loader() {
+  const { darkMode } = useContext(DarkModeContext)
   return (
     <div
       className={`flex space-x-2 justify-center items-center h-screen ${

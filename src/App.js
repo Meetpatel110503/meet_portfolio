@@ -1,5 +1,4 @@
-// src/App.js
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import About from "./views/About"
 import Contact from "./views/Contact"
 import Navbar from "./components/Navbar"
@@ -16,28 +15,24 @@ import "./App.css"
 import ArticlesSection from "./views/ArticlesSection"
 import { initGA, logPageView } from "./Analytics"
 import "./i18n"
+import { DarkModeContext } from "./context/DarkModeContext"
+import WhatsAppButton from "./components/WhatsAppButton"
+import ChatbotComponent from "./components/Chatbot"
 
 export default function App() {
+  const [isChatbotVisible, setIsChatbotVisible] = useState(false)
+  const [isButtonVisible, setIsButtonVisible] = useState(false)
+
+  const handleWhatsAppClick = () => {
+    setIsChatbotVisible(!isChatbotVisible)
+  }
+
   useEffect(() => {
     initGA()
     logPageView()
   }, [])
 
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("darkMode")
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches
-
-    if (savedTheme === "true") {
-      return true
-    } else if (savedTheme === "false") {
-      return false
-    } else {
-      return prefersDarkMode
-    }
-  })
-
+  const { darkMode } = useContext(DarkModeContext)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -45,37 +40,51 @@ export default function App() {
       setLoading(false)
     }, 1200)
 
-    return () => clearTimeout(timer)
-  }, [])
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("bg-gray-900", "text-white")
-      document.body.classList.remove("bg-white", "text-black")
-    } else {
-      document.body.classList.add("bg-white", "text-black")
-      document.body.classList.remove("bg-gray-900", "text-white")
+    const onScroll = () => {
+      if (window.pageYOffset > 3300) {
+        setIsButtonVisible(true)
+      } else {
+        setIsButtonVisible(false)
+        setIsChatbotVisible(false)
+      }
     }
-    localStorage.setItem("darkMode", darkMode)
-  }, [darkMode])
 
-  const toggleDarkMode = () => setDarkMode(!darkMode)
+    window.addEventListener("scroll", onScroll)
+
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener("scroll", onScroll)
+    }
+  }, [])
 
   if (loading) {
     return <Loader darkMode={darkMode} />
   }
 
   return (
-    <main>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <About darkMode={darkMode} />
-      <Projects darkMode={darkMode} />
-      <Skills darkMode={darkMode} />
-      <Experience darkMode={darkMode} />
-      <ArticlesSection darkMode={darkMode} />
-      <Contact darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
+    <main
+      className={`${
+        darkMode ? "dark" : ""
+      } bg-gray-100 dark:bg-gray-900 min-h-screen`}
+    >
+      <Navbar />
+      <About />
+      <Projects />
+      <Skills />
+      <Experience />
+      <ArticlesSection />
+      <Contact />
+      <Footer />
       <ScrollToTop />
+
+      <ChatbotComponent
+        isVisible={isChatbotVisible}
+        toggleChatbot={handleWhatsAppClick}
+      />
+      <WhatsAppButton
+        onClick={handleWhatsAppClick}
+        isVisible={isButtonVisible}
+      />
 
       {/* <Cursor /> */}
       <ToastContainer

@@ -1,13 +1,19 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { FaArrowRight, FaSun, FaMoon, FaBars } from "react-icons/fa"
+import { DarkModeContext } from "../context/DarkModeContext"
 import LanguageSelector from "./LanguageSelector"
+import "./Navbar.css"
 
-export default function Navbar({ darkMode, toggleDarkMode }) {
+export default function Navbar() {
   const { t } = useTranslation()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext)
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
 
   return (
     <header

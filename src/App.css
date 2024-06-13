@@ -1,22 +1,27 @@
-/* Scrollbar styles */
-/* width */
 ::-webkit-scrollbar {
   width: 4px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #423232;
   border-radius: 4px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 4px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.react-chatbot-kit-chat-input {
+  width: 100%;
+  padding: 12.5px;
+  border: none;
+  font-size: 0.85rem;
+  border-top: 1px solid #d8d8d8;
+  border-bottom-left-radius: 5px;
+  color: rgb(111, 111, 189);
 }
