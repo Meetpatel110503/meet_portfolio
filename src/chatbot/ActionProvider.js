@@ -94,7 +94,7 @@ class ActionProvider {
 
   handleOk = () => {
     const message = this.createChatBotMessage(
-      "Thank you for your kind interaction."
+      "Ok, thanks for letting me know!"
     )
     this.addMessageToState(message)
   }

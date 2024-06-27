@@ -8,12 +8,10 @@ import "./Navbar.css"
 export default function Navbar() {
   const { t } = useTranslation()
   const [menuOpen, setMenuOpen] = useState(false)
-  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext)
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
 
   return (
     <header

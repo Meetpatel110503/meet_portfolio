@@ -6,7 +6,7 @@ const WhatsAppButton = ({ onClick, isVisible }) => {
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.pageYOffset > 3300) {
+      if (window.pageYOffset > 3000) {
         setIsButtonVisible(true)
       } else {
         setIsButtonVisible(false)
