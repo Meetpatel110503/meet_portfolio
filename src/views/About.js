@@ -1,13 +1,18 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
 import { ReactTyped } from "react-typed"
+<<<<<<< Updated upstream
+=======
+import { DarkModeContext } from "../context/DarkModeContext"
+import { motion } from "framer-motion"
+>>>>>>> Stashed changes
 
 export default function About({ darkMode }) {
   const { t } = useTranslation()
 
   return (
     <section id='about' className={`${darkMode ? "bg-black" : "bg-white"}`}>
-      <div className='container mx-auto flex px-10 py-20 md:flex-row flex-col items-center'>
+      <div className='container mx-auto flex px-10 py-20 md:flex-row flex-col items-center '>
         <div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
           <h1
             className={`title-font sm:text-4xl text-3xl mb-4 font-medium ${
@@ -60,13 +65,17 @@ export default function About({ darkMode }) {
             </a>
           </div>
         </div>
-        <div className='lg:max-w-md lg:w-full md:w-1/2 w-5/6'>
+        <motion.div
+          className='lg:max-w-md lg:w-full md:w-1/2 w-5/6'
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <img
             className='object-cover object-center bg-transparent rounded-3xl border-0'
             alt='hero'
             src='/assets/meet.jpg'
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   )

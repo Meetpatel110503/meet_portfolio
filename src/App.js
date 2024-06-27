@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 // src/App.js
 import React, { useEffect, useState } from "react"
+=======
+import React, { useContext, useEffect, useRef, useState } from "react"
+>>>>>>> Stashed changes
 import About from "./views/About"
 import Contact from "./views/Contact"
 import Navbar from "./components/Navbar"
@@ -39,6 +43,13 @@ export default function App() {
   })
 
   const [loading, setLoading] = useState(true)
+  const divRef = useRef()
+
+  // function scrolltobottom() {
+  //   if (divRef.current) {
+  //     divRef.current.scrollIntoView({ behavior: "smooth" })
+  //   }
+  // }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,6 +77,7 @@ export default function App() {
   }
 
   return (
+<<<<<<< Updated upstream
     <main>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <About darkMode={darkMode} />
@@ -75,6 +87,23 @@ export default function App() {
       <ArticlesSection darkMode={darkMode} />
       <Contact darkMode={darkMode} />
       <Footer darkMode={darkMode} />
+=======
+    <main
+      className={`${
+        darkMode ? "dark" : ""
+      } bg-gray-100 dark:bg-gray-900 min-h-screen`}
+    >
+      <Navbar />
+      <About />
+      <div ref={divRef}>
+        <Projects />
+      </div>
+      <Skills />
+      <Experience />
+      <ArticlesSection />
+      <Contact />
+      <Footer />
+>>>>>>> Stashed changes
       <ScrollToTop />
 
       {/* <Cursor /> */}

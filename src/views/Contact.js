@@ -3,6 +3,11 @@ import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
 import { useInView } from "react-intersection-observer"
 import { useTranslation } from "react-i18next"
+<<<<<<< Updated upstream
+=======
+import { DarkModeContext } from "../context/DarkModeContext"
+import emailjs from "@emailjs/browser"
+>>>>>>> Stashed changes
 
 export default function Contact({ darkMode }) {
   const { t } = useTranslation()
@@ -23,19 +28,15 @@ export default function Contact({ darkMode }) {
     threshold: 0.1,
   })
 
-  const API = process.env.REACT_APP_API
-
   const onSubmit = async (data) => {
     try {
-      const response = await fetch(API, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-      const responseData = await response.text()
-      console.log(responseData)
+      const result = await emailjs.send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        data,
+        process.env.REACT_APP_USER_ID
+      )
+      console.log(result.text)
       toast.success("Message sent successfully.")
       reset()
     } catch (error) {
@@ -51,7 +52,7 @@ export default function Contact({ darkMode }) {
         darkMode ? "bg-black text-gray-400" : "bg-white text-gray-700"
       } relative`}
     >
-      <div className='container px-5 py-10  mx-auto text-center lg:px-40'>
+      <div className='container px-5 py-10 mx-auto text-center lg:px-40'>
         <div className='flex flex-col w-full'>
           <h1
             className={`sm:text-4xl text-3xl font-medium title-font mb-4 ${
@@ -118,7 +119,7 @@ export default function Contact({ darkMode }) {
                 href='mailto:meetpatel110503@gmail.com'
                 className={`leading-relaxed ${
                   darkMode ? "text-gray-400" : "text-gray-700"
-                } hover:text-green-500   `}
+                } hover:text-green-500`}
               >
                 meetpatel110503@gmail.com
               </a>
@@ -215,13 +216,13 @@ export default function Contact({ darkMode }) {
                 darkMode ? "text-gray-400" : "text-gray-700"
               }`}
             >
-              {t("Message")}
+              Message
             </label>
             <textarea
               {...register("message", { required: true })}
               id='message'
               name='message'
-              className={`w-full h-32 rounded border focus:ring-2 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out ${
+              className={`w-full rounded border focus:ring-2 h-32 text-base outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out ${
                 darkMode
                   ? "bg-gray-900 border-gray-700 focus:border-indigo-500 focus:ring-indigo-900 text-gray-100"
                   : "bg-gray-100 border-gray-300 focus:border-indigo-500 focus:ring-indigo-200 text-black"
@@ -233,7 +234,9 @@ export default function Contact({ darkMode }) {
           </div>
           <button
             type='submit'
-            className='text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'
+            className={`text-white border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ${
+              darkMode ? "bg-green-600" : "bg-green-500"
+            }`}
           >
             {t("Submit")}
           </button>

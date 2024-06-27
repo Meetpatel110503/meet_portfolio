@@ -6,6 +6,11 @@ import LanguageSelector from "./LanguageSelector"
 export default function Navbar({ darkMode, toggleDarkMode }) {
   const { t } = useTranslation()
   const [menuOpen, setMenuOpen] = useState(false)
+<<<<<<< Updated upstream
+=======
+
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext)
+>>>>>>> Stashed changes
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
