@@ -10,11 +10,11 @@ const LanguageSelector = () => {
     i18n.changeLanguage(lng)
   }
 
-  // Define languages with their code, label, and icon
+
   const languages = [
     { code: "en", label: "English", icon: "🇺🇸" },
     { code: "gr", label: "German", icon: "🇩🇪" },
-    // Add more languages as needed
+    
   ]
 
   return (

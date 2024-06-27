@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import About from "./views/About"
 import Contact from "./views/Contact"
 import Navbar from "./components/Navbar"
@@ -34,6 +34,13 @@ export default function App() {
 
   const { darkMode } = useContext(DarkModeContext)
   const [loading, setLoading] = useState(true)
+  const divRef = useRef()
+
+  // function scrolltobottom() {
+  //   if (divRef.current) {
+  //     divRef.current.scrollIntoView({ behavior: "smooth" })
+  //   }
+  // }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -69,7 +76,9 @@ export default function App() {
     >
       <Navbar />
       <About />
-      <Projects />
+      <div ref={divRef}>
+        <Projects />
+      </div>
       <Skills />
       <Experience />
       <ArticlesSection />
