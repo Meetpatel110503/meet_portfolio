@@ -98,7 +98,7 @@ export default function Articles() {
               onClick={handleLoadMore}
               className={`text-green-500 bg-transparent  border border-green-500 py-2 px-6      hover:text-green-600 hover:border-green-600 rounded text-lg`}
             >
-              Load More
+              {t("Load more")}
             </button>
           </div>
         )}

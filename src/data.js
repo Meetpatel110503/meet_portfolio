@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: "Product Management",
-    subtitle: "React",
+    subtitle: "React JS",
     description:
       "In product management system I have implement simple UI using react js.In this project user has register,login and also reset there password and manage all this functionality using localstorage.",
     source_link: "https://github.com/Meetpatel110503/react-ass2.git",
@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     title: "E-shop",
-    subtitle: "React",
+    subtitle: "React JS",
     description:
       "In the E-shope project implement UI using react adn tailwind css which look like an e-commerce website.In this project I used same functionality of authentication from product management project.",
     source_link: "https://github.com/Meetpatel110503/react-assignment3.git",
@@ -18,7 +18,7 @@ export const projects = [
   },
   {
     title: "Weather web",
-    subtitle: "React and Next js",
+    subtitle: "React and Next JS",
     description:
       "In the Weather web project implement UI using react and next js.In this project user can enter their city name or zipcode and get their city weather condition.It also display upcoming 5 days weather condition.",
     source_link: "https://github.com/Meetpatel110503/next_assignment.git",
@@ -33,6 +33,24 @@ export const projects = [
 
     source_link: "https://github.com/Meetpatel110503/meet_Hotel.git",
     demo_link: "#",
+  },
+  {
+    title: "Typing speed test",
+    subtitle: "React JS",
+    description:
+      "In Typing speed test project user can test there typing speed.There should be 3 levels of paragraph hard,medium and low and also provide time range like 30 sec,1 min,2 min.",
+
+    source_link: "https://github.com/Meetpatel110503/Typing_speed",
+    demo_link: "https://typingspeed-meet-patels-projects-4f1f1b74.vercel.app/",
+  },
+  {
+    title: "Book store",
+    subtitle: "React JS",
+    description:
+      "In Book store project that should be a multiple books are available for buying with add to cart functionality and also user has been seacrh book based on their requirnment.",
+
+    source_link: "https://github.com/Meetpatel110503/book_store",
+    demo_link: "https://book-store-blush-tau.vercel.app/",
   },
 ]
 
