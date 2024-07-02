@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa"
 import { projects } from "../data"
 import { useInView } from "react-intersection-observer"
@@ -13,6 +13,12 @@ export default function Projects() {
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const [visibleProjects, setVisibleProjects] = useState(4)
+
+  const handleLoadMore = () => {
+    setVisibleProjects((prevCount) => prevCount + 2)
+  }
 
   return (
     <section
@@ -39,7 +45,7 @@ export default function Projects() {
           </p>
         </div>
         <div className={`flex flex-wrap -m-4`} ref={ref}>
-          {projects.map((project, index) => (
+          {projects.slice(0, visibleProjects).map((project, index) => (
             <div
               className='sm:w-1/2 w-full p-4 transform transition duration-300 hover:scale-105 '
               key={project.link}
@@ -53,7 +59,7 @@ export default function Projects() {
                 style={{ transitionDelay: `${index * 0.3}s` }}
               >
                 <div
-                  className={`px-8 py-10 relative  w-full border-none rounded ${
+                  className={`px-8 py-10 relative w-full border-none rounded ${
                     darkMode ? " bg-gray-900" : " bg-gray-100"
                   } h-auto`}
                 >
@@ -75,7 +81,7 @@ export default function Projects() {
                       href={project.source_link}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className={`border border-none p-2 m-2 rounded  hover:text-green-500  text-sm ${
+                      className={`border border-none p-2 m-2 rounded hover:text-green-500 text-sm ${
                         darkMode ? "text-gray-400" : "text-gray-700"
                       }`}
                     >
@@ -86,7 +92,7 @@ export default function Projects() {
                       href={project.demo_link}
                       target='_blank'
                       rel='noreferrer'
-                      className={`border border-none p-2 m-2 rounded  hover:text-green-500 text-sm ${
+                      className={`border border-none p-2 m-2 rounded hover:text-green-500 text-sm ${
                         darkMode ? "text-gray-400" : "text-gray-700"
                       }`}
                     >
@@ -99,6 +105,16 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        {visibleProjects < projects.length && (
+          <div className='flex justify-center mt-8'>
+            <button
+              onClick={handleLoadMore}
+              className={`text-green-500 bg-transparent  border border-green-500 py-2 px-6 hover:text-green-600 hover:border-green-600 rounded text-lg`}
+            >
+              {t("Load more")}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

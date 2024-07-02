@@ -79,6 +79,7 @@ class ActionProvider {
             </a>
           </li>
         </ul>
+        <p>Feel free to reach out me for any inquiries.</p>
       </div>
     )
 
@@ -93,9 +94,7 @@ class ActionProvider {
   }
 
   handleOk = () => {
-    const message = this.createChatBotMessage(
-      "Ok, thanks for letting me know!"
-    )
+    const message = this.createChatBotMessage("Ok, thanks for letting me know!")
     this.addMessageToState(message)
   }
 
@@ -110,7 +109,7 @@ class ActionProvider {
 
   handleAvailable = () => {
     const message = this.createChatBotMessage(
-      "Feel free to leave a message, and I'll get back to you as soon as possible."
+      "Feel free to leave a message in my contact page, and I'll get back to you as soon as possible."
     )
     this.addMessageToState(message)
   }
